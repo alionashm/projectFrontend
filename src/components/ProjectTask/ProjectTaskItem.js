@@ -12,24 +12,26 @@ class ProjectTaskItem extends Component {
     render() {
         const {project_task} = this.props;
         return (
-            <div className="card mb-1 bg-light">
-
-                <div className="card-header text-primary">
-                    ID: {project_task.id}
+            <div className="card card-task">
+                <div className="card-task-header">
+                    <div className="card-header text-primary">
+                        ID: {project_task.id}
+                    </div>
+                    <button className="btn-delete"
+                    onClick={this.onDeleteClick.bind(this, project_task.id)}>
+                        Х
+                    </button>
                 </div>
                 <div className="card-body bg-light">
                     <h5 className="card-title">{project_task.summary}</h5>
-                    <p className="card-text text-truncate ">
+                    <p className="card-text">
                         {project_task.acceptanceCriteria}
                     </p>
-                    <Link to={`updateProjectTask/${project_task.id}`} className="btn btn-primary">
+                    <Link to={`updateProjectTask/${project_task.id}`} className="btn btn-view-update">
                         View / Update
                     </Link>
 
-                    <button className="btn btn-danger ml-4"
-                    onClick={this.onDeleteClick.bind(this, project_task.id)}>
-                        Delete
-                    </button>
+                    
                 </div>
             </div>
         )

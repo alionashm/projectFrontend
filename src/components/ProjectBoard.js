@@ -20,7 +20,7 @@ class ProjectBoard extends Component{
         const BoardAlgorithm = project_tasks => {
             if(project_tasks.length < 1){
                 return (
-                    <div className = "alert alert-info text-center" role="alert">
+                    <div className = "alert" role="alert">
                         No Project Tasks on this board
                     </div>
                 )
@@ -48,8 +48,8 @@ class ProjectBoard extends Component{
                         <div className="container">
                             <div className="row">
                                 <div className="col-md-4">
-                                    <div className="card text-center mb-2">
-                                        <div className="card-header bg-secondary text-white">
+                                    <div className="card">
+                                        <div className="card-header bg-secondary">
                                             <h3>TO DO</h3>
                                         </div>
                                     </div>
@@ -58,7 +58,7 @@ class ProjectBoard extends Component{
                                 </div>
                                 <div className="col-md-4">
                                     <div className="card text-center mb-2">
-                                        <div className="card-header bg-primary text-white">
+                                        <div className="card-header bg-primary">
                                             <h3>In Progress</h3>
                                         </div>
                                     </div>
@@ -67,7 +67,7 @@ class ProjectBoard extends Component{
                                 </div>
                                 <div className="col-md-4">
                                     <div className="card text-center mb-2">
-                                        <div className="card-header bg-success text-white">
+                                        <div className="card-header bg-success">
                                             <h3>Done</h3>
                                         </div>
                                     </div>
@@ -85,7 +85,7 @@ class ProjectBoard extends Component{
 
         return (
             <div className="container">
-                <Link to="/addProjectTask" className="btn btn-primary mb-3">
+                <Link to="/addProjectTask" className="btn btn-create">
                     <i className="fas fa-plus-circle"> Create Project Task</i>
                 </Link>
                 <br />
