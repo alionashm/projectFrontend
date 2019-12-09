@@ -12,6 +12,7 @@ class UpdateProjectTask extends Component {
             summary: "",
             acceptanceCriteria: "",
             status: "",
+            priority: "",
             errors: {}
         };
         this.onChange = this.onChange.bind(this);
@@ -27,14 +28,16 @@ class UpdateProjectTask extends Component {
             id,
             summary,
             acceptanceCriteria,
-            status
+            status,
+            priority
         } = nextProps.project_task;
 
         this.setState({
             id,
             summary,
             acceptanceCriteria,
-            status
+            status,
+            priority
         });
     }
 
@@ -50,6 +53,7 @@ class UpdateProjectTask extends Component {
             summary: this.state.summary,
             acceptanceCriteria: this.state.acceptanceCriteria,
             status: this.state.status,
+            priority: this.state.priority
         };
 
         this.props.addProjectTask(updatedTask, this.props.history);
@@ -106,6 +110,20 @@ class UpdateProjectTask extends Component {
                                         <option value="TO_DO">TO DO</option>
                                         <option value="IN_PROGRESS">IN PROGRESS</option>
                                         <option value="DONE">DONE</option>
+                                    </select>
+                                </div>
+                                <div className="form-group">
+                                    <select 
+                                        className="form-control form-control-lg" 
+                                        name="priority"
+                                        value={this.state.priority}
+                                        onChange={this.onChange}
+                                    >
+                                       <option value="">Select Priority</option>
+                                        <option value="URGENT_AND_IMPORTANT">URGENT AND IMPORTANT</option>
+                                        <option value="URGENT_AND_UNIMPORTANT">URGENT AND UNIMPORTANT</option>
+                                        <option value="NOT_URGENT_AND_IMPORTANT">NOT URGENT AND IMPORTANT</option>
+                                        <option value="NOT_URGENT_AND_UNIMPORTANT">NOT URGENT AND UNIMPORTANT</option>
                                     </select>
                                 </div>
                                 <input type="submit" className="btn btn-send" />

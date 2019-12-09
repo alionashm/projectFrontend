@@ -11,8 +11,24 @@ class ProjectTaskItem extends Component {
 
     render() {
         const {project_task} = this.props;
+        var card_color = "";
+        if(this.props.project_task.priority === "URGENT_AND_IMPORTANT"){
+            card_color="card card-task card-task-red";
+        }
+
+        if(this.props.project_task.priority === "URGENT_AND_UNIMPORTANT"){
+            card_color="card card-task card-task-black";
+        }
+
+        if(this.props.project_task.priority === "NOT_URGENT_AND_IMPORTANT"){
+            card_color="card card-task card-task-green";
+        }
+
+        if(this.props.project_task.priority === "NOT_URGENT_AND_UNIMPORTANT"){
+            card_color="card card-task card-task-green";
+        }
         return (
-            <div className="card card-task">
+            <div className={card_color}>
                 <div className="card-task-header">
                     <div className="card-header text-primary">
                         ID: {project_task.id}

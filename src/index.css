@@ -143,6 +143,18 @@ code {
   background-color:rgb(0, 183, 255);
 }
 
+.card-task-red{
+  background-color:red;
+}
+
+.card-task-black{
+  background-color:black;
+}
+
+.card-task-green{
+  background-color:green;
+}
+
 .card-task-header{
   display:flex;
   flex-direction:row;
