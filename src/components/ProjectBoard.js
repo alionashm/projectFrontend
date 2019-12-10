@@ -3,20 +3,26 @@ import {Link} from 'react-router-dom'
 import ProjectTaskItem from './ProjectTask/ProjectTaskItem';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
-import {getBacklog} from '../actions/projectTaskActions';
-
+import {getBacklog,searchTasks} from '../actions/projectTaskActions';
 class ProjectBoard extends Component{
     componentDidMount(){
         this.props.getBacklog();
     }
+
+    findTask(){
+        this.props.searchTasks(this.searchInput.value);
+    }
+
     render() {
-        const {project_tasks} = this.props.project_tasks;
+        const {project_tasks} = this.props;
 
         let BoardContent;
         let todoItems = [];
         let inProgressItems = [];
         let doneItems = [];
 
+        
+        
         const BoardAlgorithm = project_tasks => {
             if(project_tasks.length < 1){
                 return (
@@ -39,15 +45,15 @@ class ProjectBoard extends Component{
                     }
 
                     if(tasks[i].props.project_task.status === "DONE"){
-                       doneItems.push(tasks[i]);
+                    doneItems.push(tasks[i]);
                     }
+                
                 }
-
                 return (
                     <React.Fragment>
                         <div className="container">
                             <div className="row">
-                                <div className="col-md-4">
+                                <div className="col-md-4 col-todo">
                                     <div className="card">
                                         <div className="card-header bg-secondary">
                                             <h3>TO DO</h3>
@@ -56,7 +62,7 @@ class ProjectBoard extends Component{
 
                                     {todoItems}
                                 </div>
-                                <div className="col-md-4">
+                                <div className="col-md-4 col-inprogress">
                                     <div className="card text-center mb-2">
                                         <div className="card-header bg-primary">
                                             <h3>In Progress</h3>
@@ -65,7 +71,7 @@ class ProjectBoard extends Component{
                                     
                                     {inProgressItems}
                                 </div>
-                                <div className="col-md-4">
+                                <div className="col-md-4 col-done">
                                     <div className="card text-center mb-2">
                                         <div className="card-header bg-success">
                                             <h3>Done</h3>
@@ -84,7 +90,12 @@ class ProjectBoard extends Component{
         BoardContent = BoardAlgorithm(project_tasks);
 
         return (
+            
             <div className="container">
+                <div>
+                <input type="text" ref={(input) => {this.searchInput = input}} />
+                <button onClick={this.findTask.bind(this)}>Find</button>
+            </div>
                 <Link to="/addProjectTask" className="btn btn-create">
                     <i className="fas fa-plus-circle"> Create Project Task</i>
                 </Link>
@@ -98,11 +109,12 @@ class ProjectBoard extends Component{
 
 ProjectBoard.propTypes = {
     getBacklog: PropTypes.func.isRequired,
-    project_tasks: PropTypes.object.isRequired
+    project_tasks: PropTypes.object.isRequired,
+    searchTasks: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
-    project_tasks: state.project_task
+    project_tasks: state.project_task.project_tasks.filter(project_task => project_task.summary.includes(state.filterTasks))
 });
 
-export default connect(mapStateToProps,{getBacklog}) (ProjectBoard);
+export default connect(mapStateToProps,{getBacklog, searchTasks}) (ProjectBoard);

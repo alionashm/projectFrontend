@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {GET_ERRORS, GET_PROJECT_TASKS, DELETE_PROJECT_TASK, GET_PROJECT_TASK} from './types';
+import {GET_ERRORS, GET_PROJECT_TASKS, DELETE_PROJECT_TASK, GET_PROJECT_TASK, FIND_TASKS} from './types';
 
 export const addProjectTask = (project_task, history) => async dispatch => {
     try {
@@ -51,3 +51,10 @@ export const getProjectTask = (pt_id, history) => async dispatch => {
         history.push("/");
     }
 };
+
+export const searchTasks = (name) => async dispatch => {
+    dispatch({
+        type:FIND_TASKS,
+        payload:name
+    });
+}

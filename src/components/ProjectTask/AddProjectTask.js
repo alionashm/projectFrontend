@@ -93,7 +93,7 @@ class AddProjectTask extends Component {
                                 <div className="form-group">
                                     <select 
                                         className="form-control form-control-lg" 
-                                        name="status" 
+                                        name="priority" 
                                         value={this.state.priority}
                                         onChange={this.onChange}
                                     > 

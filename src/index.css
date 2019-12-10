@@ -58,6 +58,9 @@ code {
 }
 
 .btn-create{
+  position: fixed;
+  right: 10px;
+  top: 80%;
   background-color: #1c94e0; 
   font-size: 20px;
   font-weight: 700; 
@@ -123,36 +126,52 @@ code {
   max-width:30%
 }
 
+.col-todo:hover{  
+  background-color:rgb(255, 133, 133);
+}
+
+.col-inprogress:hover{  
+  background-color:rgb(255, 216, 133);
+}
+
+.col-done:hover{  
+  background-color:rgb(153, 255, 133);
+}
+
 .card{
   position:relative;
-  display:-ms-flexbox;
   display:flex;
-  -ms-flex-direction:column;
   flex-direction:column;
   min-width:0;
   word-wrap:break-word;
-  background-color:#fff;
   background-clip:border-box;
-  border:1px solid rgba(0,0,0,.125);
   border-radius:.25rem;
   text-align:center;
   margin-bottom:.5rem
 }
-  
+
+.card-task{
+  border:1px solid rgba(0,0,0,.125);
+}
+
 .card-task:hover{
   background-color:rgb(0, 183, 255);
 }
 
-.card-task-red{
-  background-color:red;
+.card-task-ur-im{
+  background-color:rgb(151, 54, 54);
 }
 
-.card-task-black{
-  background-color:black;
+.card-task-ur-unim{
+  background-color:rgb(230, 140, 182);
 }
 
-.card-task-green{
-  background-color:green;
+.card-task-notur-im{
+  background-color:rgb(255, 227, 71);
+}
+
+.card-task-green-notur-unim{
+  background-color:rgb(62, 150, 54);
 }
 
 .card-task-header{
@@ -169,6 +188,7 @@ code {
 }
 
 .card-body{
+  background-color:#fff;
   flex:1 1 auto;
   min-height:1px;
   padding:1.25rem
@@ -194,15 +214,18 @@ code {
 }
 
 .bg-secondary{
-  background-color:#6c757d
+  color: red;
+  border-bottom:5px solid red;
 }
 
 .bg-primary{
-  background-color:#007bff
+  color:#eeff00;
+  border-bottom:5px solid red;
 }
 
 .bg-success{
-  background-color:#28a745
+  color:#28a745;
+  border-bottom:5px solid red;
 }
 
 .bg-light{
