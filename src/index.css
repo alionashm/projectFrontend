@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color:#e0c2b8 ;
 }
 
 code {
@@ -16,7 +17,7 @@ code {
 .navbar{
   position:relative;
   color:#fff;
-  background-color: #007bff;
+  background-color: #5d709a;
   height: 57px;
   display:flex;
   flex-wrap:wrap;
@@ -57,11 +58,25 @@ code {
   margin-top: 22px
 }
 
+.btn-back{
+  position: fixed;
+  right: 20px;
+  top: 80%;
+  background-color: #96939e;  
+  border-radius:60px;
+  font-size: 40px;
+  font-weight: 1000;
+  padding-right: 17px;
+  padding-left: 17px;
+  padding-top:7px;
+  padding-bottom: 10px;
+}
+
 .btn-create{
   position: fixed;
   right: 20px;
   top: 80%;
-  background-color: #1c94e0; 
+  background-color: #96939e; 
   font-size: 40px;
   font-weight: 1000; 
   max-width: 20%;
@@ -76,7 +91,11 @@ code {
 .btn-search{
   border-radius: 5px;
   border: none;
-  height: 1.65em;
+  background-image:url(lupa.png);
+  background-color:#5d709a;
+  height: 22px;
+  width: 22px;
+  background-size: 22px 22px;
 }
 
 
@@ -107,7 +126,7 @@ code {
   background-color: #e01c1c; 
   font-size: 20px;
   font-weight: 500;
-  align-self: center;
+  margin:0 auto;
 }
 
 .input-search{
@@ -115,12 +134,16 @@ code {
   width: 70%;
   border-radius: 5px;
   border: none;
+  display:block
 }
 
-.search-block{  
+.search-block{ 
+  display:flex; 
   right: 20px;
   top: 15px;
+  height: 22px;
   position: absolute;
+  justify-content: left;
 }
 
 .container{
