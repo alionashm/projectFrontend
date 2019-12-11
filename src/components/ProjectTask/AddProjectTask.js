@@ -46,7 +46,7 @@ class AddProjectTask extends Component {
                     <div className="row">
                         <div className="col-md-8 m-auto">
                             <Link to="/" className="btn btn-back">←</Link>
-                            <h4 className="display-4 text-center">Add /Update Project Task</h4>
+                            <h4 className="display-4 text-center">Add New Goal Or Task</h4>
                             <form onSubmit={this.onSubmit}>
                                 <div className="form-group">
                                     <input 
@@ -96,10 +96,10 @@ class AddProjectTask extends Component {
                                         onChange={this.onChange}
                                     > 
                                         <option value="">Select Priority</option>
-                                        <option value="URGENT_AND_IMPORTANT">URGENT AND IMPORTANT</option>
-                                        <option value="URGENT_AND_UNIMPORTANT">URGENT AND UNIMPORTANT</option>
-                                        <option value="NOT_URGENT_AND_IMPORTANT">NOT URGENT AND IMPORTANT</option>
-                                        <option value="NOT_URGENT_AND_UNIMPORTANT">NOT URGENT AND UNIMPORTANT</option>
+                                        <option className="card-task-ur-im" value="URGENT_AND_IMPORTANT">URGENT AND IMPORTANT</option>
+                                        <option className="card-task-ur-unim" value="URGENT_AND_UNIMPORTANT">URGENT AND UNIMPORTANT</option>
+                                        <option className="card-task-notur-im" value="NOT_URGENT_AND_IMPORTANT">NOT URGENT AND IMPORTANT</option>
+                                        <option className="card-task-notur-unim" value="NOT_URGENT_AND_UNIMPORTANT">NOT URGENT AND UNIMPORTANT</option>
                                     </select>
                                 </div>
                                 <input type="submit" className="btn btn-send" />

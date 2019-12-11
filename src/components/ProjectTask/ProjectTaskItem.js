@@ -25,12 +25,12 @@ class ProjectTaskItem extends Component {
         }
 
         if(this.props.project_task.priority === "NOT_URGENT_AND_UNIMPORTANT"){
-            card_color="card card-task card-task-green-notur-unim";
+            card_color="card card-task card-task-notur-unim";
         }
         return (
             <div className={card_color}>
                 <div className="card-task-header">
-                    <div className="card-header text-primary">
+                    <div className="card-header">
                         ID: {project_task.id}
                     </div>
                     <button className="btn-delete"

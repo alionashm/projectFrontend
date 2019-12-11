@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 import {getProjectTask, addProjectTask} from '../../actions/projectTaskActions';
 
 class UpdateProjectTask extends Component {
@@ -70,10 +71,8 @@ class UpdateProjectTask extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-8 m-auto">
-                            <a href="/" className="btn btn-create">
-                                Back to Board
-                            </a>
-                            <h4 className="display-4 text-center">Add /Update Project Task</h4>
+                        <Link to="/" className="btn btn-back">←</Link>
+                            <h4 className="display-4 text-center">Update My Goal Or Task</h4>
                             <form onSubmit={this.onSubmit}>
                                 <div className="form-group">
                                     <input 
@@ -120,10 +119,10 @@ class UpdateProjectTask extends Component {
                                         onChange={this.onChange}
                                     >
                                        <option value="">Select Priority</option>
-                                        <option value="URGENT_AND_IMPORTANT">URGENT AND IMPORTANT</option>
-                                        <option value="URGENT_AND_UNIMPORTANT">URGENT AND UNIMPORTANT</option>
-                                        <option value="NOT_URGENT_AND_IMPORTANT">NOT URGENT AND IMPORTANT</option>
-                                        <option value="NOT_URGENT_AND_UNIMPORTANT">NOT URGENT AND UNIMPORTANT</option>
+                                       <option className="card-task-ur-im" value="URGENT_AND_IMPORTANT">URGENT AND IMPORTANT</option>
+                                        <option className="card-task-ur-unim" value="URGENT_AND_UNIMPORTANT">URGENT AND UNIMPORTANT</option>
+                                        <option className="card-task-notur-im" value="NOT_URGENT_AND_IMPORTANT">NOT URGENT AND IMPORTANT</option>
+                                        <option className="card-task-notur-unim" value="NOT_URGENT_AND_UNIMPORTANT">NOT URGENT AND UNIMPORTANT</option>
                                     </select>
                                 </div>
                                 <input type="submit" className="btn btn-send" />

@@ -27,7 +27,7 @@ class ProjectBoard extends Component{
             if(project_tasks.length < 1){
                 return (
                     <div className = "alert" role="alert">
-                        No Project Tasks on this board
+                        No Tasks or Goals. Let's create!
                     </div>
                 )
             } else {
@@ -56,7 +56,7 @@ class ProjectBoard extends Component{
                                 <div className="col-md-4 col-todo">
                                     <div className="card">
                                         <div className="card-header bg-secondary">
-                                            <h3>TO DO</h3>
+                                            <h3>Wath Do I Need To Do?</h3>
                                         </div>
                                     </div>
 
@@ -65,7 +65,7 @@ class ProjectBoard extends Component{
                                 <div className="col-md-4 col-inprogress">
                                     <div className="card text-center mb-2">
                                         <div className="card-header bg-primary">
-                                            <h3>In Progress</h3>
+                                            <h3>What's In Progress?</h3>
                                         </div>
                                     </div>
                                     
@@ -74,7 +74,7 @@ class ProjectBoard extends Component{
                                 <div className="col-md-4 col-done">
                                     <div className="card text-center mb-2">
                                         <div className="card-header bg-success">
-                                            <h3>Done</h3>
+                                            <h3>What I've Done?</h3>
                                         </div>
                                     </div>
                                 
