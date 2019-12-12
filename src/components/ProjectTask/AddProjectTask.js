@@ -102,7 +102,7 @@ class AddProjectTask extends Component {
                                         <option className="card-task-notur-unim" value="NOT_URGENT_AND_UNIMPORTANT">NOT URGENT AND UNIMPORTANT</option>
                                     </select>
                                 </div>
-                                <input type="submit" className="btn btn-send" />
+                                <input type="submit" className="btn btn-send" value="Add"/>
                             </form>
                         </div>
                     </div>
