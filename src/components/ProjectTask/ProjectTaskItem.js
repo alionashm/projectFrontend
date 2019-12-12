@@ -13,19 +13,19 @@ class ProjectTaskItem extends Component {
         const {project_task} = this.props;
         var card_color = "";
         if(this.props.project_task.priority === "URGENT_AND_IMPORTANT"){
-            card_color="card card-task card-task-ur-im";
+            card_color="swing card card-task card-task-ur-im";
         }
 
         if(this.props.project_task.priority === "URGENT_AND_UNIMPORTANT"){
-            card_color="card card-task card-task-ur-unim";
+            card_color="swing card card-task card-task-ur-unim";
         }
 
         if(this.props.project_task.priority === "NOT_URGENT_AND_IMPORTANT"){
-            card_color="card card-task card-task-notur-im";
+            card_color="swing card card-task card-task-notur-im";
         }
 
         if(this.props.project_task.priority === "NOT_URGENT_AND_UNIMPORTANT"){
-            card_color="card card-task card-task-notur-unim";
+            card_color="swing card card-task card-task-notur-unim";
         }
         return (
             <div className={card_color}>

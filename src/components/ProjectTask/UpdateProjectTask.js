@@ -81,7 +81,7 @@ class UpdateProjectTask extends Component {
                                             "is-invalid":errors.summary
                                         })} 
                                         name="summary" 
-                                        placeholder="Project Task summary" 
+                                        placeholder="Write Here Your Goal Or Task Summary..." 
                                         value={this.state.summary}
                                         onChange={this.onChange}
                                     />
@@ -92,7 +92,7 @@ class UpdateProjectTask extends Component {
                                 <div className="form-group">
                                     <textarea 
                                         className="form-control form-control-lg" 
-                                        placeholder="Acceptance Criteria" 
+                                        placeholder="Write Here What You Need To Complete Task..." 
                                         name="acceptanceCriteria"
                                         value={this.state.acceptanceCriteria}
                                         onChange={this.onChange}>

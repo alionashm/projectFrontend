@@ -1,4 +1,4 @@
-import {GET_PROJECT_TASKS, DELETE_PROJECT_TASK, GET_PROJECT_TASK} from '../actions/types';
+import {FIND_TASKS} from '../actions/types';
 
 const initialState = '';
 

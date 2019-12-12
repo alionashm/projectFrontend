@@ -56,7 +56,7 @@ class AddProjectTask extends Component {
                                         })} 
                                         name="summary" 
                                         value={this.state.summary} 
-                                        placeholder="Project Task summary" 
+                                        placeholder="Write Here Your Goal Or Task Summary..." 
                                         onChange={this.onChange}
                                     />
                                     {
@@ -68,7 +68,7 @@ class AddProjectTask extends Component {
                                 <div className="form-group">
                                     <textarea 
                                         className="form-control form-control-lg" 
-                                        placeholder="Acceptance Criteria" 
+                                        placeholder="Write Here What You Need To Complete Task..." 
                                         name="acceptanceCriteria" 
                                         value={this.state.acceptanceCriteria}
                                         onChange={this.onChange}

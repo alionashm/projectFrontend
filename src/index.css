@@ -365,3 +365,11 @@ code {
 @media (min-width:1200px){
   .container{max-width:1140px}
 }
+
+.swing:hover {
+  -webkit-transform: scale(1.09);
+  -ms-transform: scale(1.09);
+  transform: scale(1.04);
+}
+
+
