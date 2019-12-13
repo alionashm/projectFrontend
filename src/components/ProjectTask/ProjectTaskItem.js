@@ -12,23 +12,28 @@ class ProjectTaskItem extends Component {
     render() {
         const {project_task} = this.props;
         var card_color = "";
+        var card_priority = "";
         if(this.props.project_task.priority === "URGENT_AND_IMPORTANT"){
             card_color="swing card card-task card-task-ur-im";
+            card_priority="Urgent And Important";
         }
 
         if(this.props.project_task.priority === "URGENT_AND_UNIMPORTANT"){
             card_color="swing card card-task card-task-ur-unim";
+            card_priority="Urgent And Unimportant";
         }
 
         if(this.props.project_task.priority === "NOT_URGENT_AND_IMPORTANT"){
             card_color="swing card card-task card-task-notur-im";
+            card_priority="Not Urgent And Important";
         }
 
         if(this.props.project_task.priority === "NOT_URGENT_AND_UNIMPORTANT"){
             card_color="swing card card-task card-task-notur-unim";
+            card_priority="Not Urgent And Unimportant";
         }
         return (
-            <div className={card_color}>
+            <div className={card_color} data-title={card_priority}>
                 <div className="card-task-header">
                     <div className="card-header">
                         ID: {project_task.id}

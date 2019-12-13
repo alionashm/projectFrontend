@@ -132,7 +132,7 @@ code {
 
 .input-search{
   height: 1.5em;
-  width: 70%;
+  width: 100%;
   border-radius: 5px;
   border: none;
   display:block
@@ -140,7 +140,7 @@ code {
 
 .search-block{ 
   display:flex; 
-  right: 20px;
+  right: 8.3%;
   top: 15px;
   height: 22px;
   position: absolute;
@@ -208,8 +208,16 @@ code {
   border:1px solid rgba(0,0,0,.125);
 }
 
-.card-task:hover{
-  background-color:#5d709a;
+.card-task:hover::after{
+  content: attr(data-title);
+  position: absolute;
+  left: 0%; top: 45px;
+  z-index: 1;
+  background: #5d709a3b;
+  font-size: 11px;
+  padding: 5px 10px;
+  border:none;
+  width:94%
 }
 
 .card-task-ur-im{
