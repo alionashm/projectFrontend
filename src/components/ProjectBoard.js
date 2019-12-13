@@ -93,8 +93,8 @@ class ProjectBoard extends Component{
             
             <div className="container">
                 <div className="search-block">
-                    <input className="input-search" type="text" ref={(input) => {this.searchInput = input}} />
-                    <button className="btn-search" onClick={this.findTask.bind(this)}></button>
+                    <input className="input-search" type="text" placeholder="Search" ref={(input) => {this.searchInput = input}} onChange={this.findTask.bind(this)} />
+                    {/* <button className="btn-search" onChange={this.findTask.bind(this)}></button> */}
                 </div>
                 <Link to="/addProjectTask" className="btn btn-create">
                     +
