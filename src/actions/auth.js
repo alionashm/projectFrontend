@@ -13,15 +13,12 @@ export const login = (userData) => (dispatch) => {
     .then((res)=>{
         const{token}=res.data
         localStorage.setItem('access_token',token)
-        // setAuthToken(token)
-        // const decoded = jwtDecode(token)
         dispatch(setCurrentUser(token))
     })
 }
 
 export const logout = ()=>(dispatch) => {
     localStorage.removeItem('access_token')
-    //setAuthToken(false)
     dispatch(setCurrentUser({}))
 }
 

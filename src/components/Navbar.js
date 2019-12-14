@@ -1,4 +1,3 @@
-// import React, {Component} from 'react'
 
 // class Navbar extends Component{
 //     render(){
@@ -17,14 +16,9 @@
 // export default Navbar;
 
 import React from 'react'
-
 import { Link } from 'react-router-dom'
-
 import PropTypes from 'prop-types'
-
 import { connect } from 'react-redux'
-
-
 import { logout } from '../actions/auth'
 
 class Navbar extends React.Component {
@@ -35,69 +29,46 @@ class Navbar extends React.Component {
   }
 
   render() {
-    const { isAuthenticated, user } = this.props.auth
     let links
     if (localStorage.getItem("access_token")) {
       links = (
-        <li className="nav-item dropdown">
-          <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-            <div className="dropdown-divider"></div>
+        
+            <div className="btn">
             <Link
-              className="dropdown-item"
               to="/login"
               onClick={this.onLogout}
             >Log Out</Link>
           </div>
-        </li>
       )
     } else {
       links = (
         <React.Fragment>
-          <li className="nav-item">
-            <Link className="nav-link" to="/login">
+          <div className="btn">
+            <Link to="/login">
               <i className="fa fa-sign-in"></i>
               Log In
             </Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/register">
+          </div>
+          <div className="btn">
+            <Link to="/register">
               <i className="fa fa-user-plus"></i>
               Register
             </Link>
-          </li>
+          </div>
         </React.Fragment>
       )
     }
     return (
-      <nav className="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark">
+      <nav className="navbar">
         <div className="container">
-          <Link className="navbar-brand" to="/">Kakaya-to softina</Link>
-          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav mr-auto">
-              <li className="nav-item">
-                <Link className="nav-link" to="/">
-                  <i className="fa fa-globe"></i>
-                  All Posts
-                </Link>
-              </li>
-              {/* {isAuthenticated && (
-                <li className="nav-item">
-                  <Link className="nav-link" to="/feed">
-                    <i className="fa fa-rss"></i>
-                    Feed
-                  </Link>
-                </li>
-              )} */}
-            </ul>
-            <ul className="navbar-nav">
-              {links}
-            </ul>
-          </div>
+            <a className="navbar-brand" href="/">
+                Project Task Tool
+            </a>
         </div>
+          {links}
       </nav>
+            
+          
     )
   }
 }

@@ -30,76 +30,53 @@ class Register extends React.Component {
     }
     render(){
        return(
-            <div className="row mt-4">
-        <div className="col-4 mx-auto">
-          <div className="card">
-            <article className="card-body">
-              <h4 className="card-title text-center mb-4 mt-1">Registration</h4>
-              <form onSubmit={this.onSubmit}>
-                <div className="form-group">
-                  <div className="input-group">
-                    <div className="input-group-prepend">
-                      <span className="input-group-text">
-                        <i className="fa fa-user"></i>
-                      </span>
+          <div className="container">
+            <div className="row">
+              <div className="col-md-8 m-auto">
+                  <h4 className="display-4 text-center">Registration</h4>
+                  <form onSubmit={this.onSubmit}>
+                    <div className="form-group form-login">
+                        <input
+                          className="form-control"
+                          placeholder="Name"
+                          type="text"
+                          name="name"
+                          value={this.state.name}
+                          onChange={this.onChange}
+                          pattern=".{3,20}"
+                          required
+                        />
                     </div>
-                    <input
-                      className="form-control"
-                      placeholder="Name"
-                      type="text"
-                      name="name"
-                      value={this.state.name}
-                      onChange={this.onChange}
-                      pattern=".{3,20}"
-                      required
-                    />
-                  </div>
-                </div>
-                <div className="form-group">
-                  <div className="input-group">
-                    <div className="input-group-prepend">
-                      <span className="input-group-text">
-                        <i className="fa fa-envelope"></i>
-                      </span>
+                    <div className="form-group form-login">
+                        <input
+                          className="form-control"
+                          placeholder="Email"
+                          type="email"
+                          name="email"
+                          value={this.state.email}
+                          onChange={this.onChange}
+                          pattern=".{5,30}"
+                          required
+                        />
                     </div>
-                    <input
-                      className="form-control"
-                      placeholder="Email"
-                      type="email"
-                      name="email"
-                      value={this.state.email}
-                      onChange={this.onChange}
-                      pattern=".{5,30}"
-                      required
-                    />
-                  </div>
-                </div>
-                <div className="form-group">
-                  <div className="input-group">
-                    <div className="input-group-prepend">
-                      <span className="input-group-text">
-                        <i className="fa fa-lock"></i>
-                      </span>
+                    <div className="form-group form-login">
+                        <input
+                          className="form-control"
+                          placeholder="Password"
+                          type="password"
+                          name="password"
+                          value={this.state.password}
+                          onChange={this.onChange}
+                          pattern=".{6,30}"
+                        />
                     </div>
-                    <input
-                      className="form-control"
-                      placeholder="Password"
-                      type="password"
-                      name="password"
-                      value={this.state.password}
-                      onChange={this.onChange}
-                      pattern=".{6,30}"
-                    />
-                  </div>
-                </div>
-                <div className="form-group">
-                  <button type="submit" className="btn btn-dark btn-block">Register</button>
-                </div>
-              </form>
-            </article>
+                    <div className="form-group">
+                      <button type="submit" className="btn btn-send">Register</button>
+                    </div>
+                  </form>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
         )
     }
 }

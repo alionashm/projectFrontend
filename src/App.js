@@ -10,9 +10,10 @@ import UpdateProjectTask from './components/ProjectTask/UpdateProjectTask';
 import Register from './components/Auth/Register';
 import Login from './components/Auth/Login';
 
-// if (localStotage.access_token) {
-//   const {access_token} = localStorage
-//   store.dispatch(setCurrentUser(access_token))
+// if (!localStorage.access_token){
+  
+//   window.location.href = '/login'
+  
 // }
 
 class App extends Component {
@@ -21,9 +22,10 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div className="App">
+            
+            <Navbar />
             <Route path="/register" component={Register}/>
             <Route path="/login" component={Login}/>
-            <Navbar />
             <Route exact path="/" component={ProjectBoard} />
             <Route exact path="/addProjectTask" component={AddProjectTask} />
             <Route exact path="/updateProjectTask/:pt_id" component={UpdateProjectTask} />
