@@ -7,6 +7,13 @@ import AddProjectTask from './components/ProjectTask/AddProjectTask';
 import {Provider} from 'react-redux';
 import store from './store'
 import UpdateProjectTask from './components/ProjectTask/UpdateProjectTask';
+import Register from './components/Auth/Register';
+import Login from './components/Auth/Login';
+
+// if (localStotage.access_token) {
+//   const {access_token} = localStorage
+//   store.dispatch(setCurrentUser(access_token))
+// }
 
 class App extends Component {
   render() {
@@ -14,6 +21,8 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div className="App">
+            <Route path="/register" component={Register}/>
+            <Route path="/login" component={Login}/>
             <Navbar />
             <Route exact path="/" component={ProjectBoard} />
             <Route exact path="/addProjectTask" component={AddProjectTask} />

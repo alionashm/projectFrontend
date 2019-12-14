@@ -74,6 +74,7 @@ code {
 
 .btn-create{
   position: fixed;
+  z-index: 1;
   right: 20px;
   top: 80%;
   background-color: #96939e; 
