@@ -1,9 +1,12 @@
+
+
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom'
 import ProjectTaskItem from './ProjectTask/ProjectTaskItem';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {getBacklog,searchTasks} from '../actions/projectTaskActions';
+import {Redirect} from 'react-router-dom';
 class ProjectBoard extends Component{
     componentDidMount(){
         this.props.getBacklog();
@@ -21,7 +24,25 @@ class ProjectBoard extends Component{
         let inProgressItems = [];
         let doneItems = [];
 
-        
+        // let links
+        // if (localStorage.getItem("access_token")) {
+        //     links = (
+        //         <div className="container">
+        //         <div className="search-block">
+        //             <input className="input-search" type="text" placeholder="Search" ref={(input) => {this.searchInput = input}} onChange={this.findTask.bind(this)} />
+        //             {/* <button className="btn-search" onChange={this.findTask.bind(this)}></button> */}
+        //         </div>
+        //         <Link to="/addProjectTask" className="btn btn-create">
+        //             +
+        //         </Link>
+        //         <br />
+        //         <br />
+        //         {BoardContent}
+        //     </div>
+        //     )
+        // } else{
+        //     links = (<Redirect to="/login" />)
+        // }
         
         const BoardAlgorithm = project_tasks => {
             if(project_tasks.length < 1){
@@ -88,9 +109,8 @@ class ProjectBoard extends Component{
         };
 
         BoardContent = BoardAlgorithm(project_tasks);
-
+        if (localStorage.getItem("access_token")) {
         return (
-            
             <div className="container">
                 <div className="search-block">
                     <input className="input-search" type="text" placeholder="Search" ref={(input) => {this.searchInput = input}} onChange={this.findTask.bind(this)} />
@@ -103,7 +123,9 @@ class ProjectBoard extends Component{
                 <br />
                 {BoardContent}
             </div>
-        );
+        )}else{
+            return(<Redirect to="/login" />)
+        }
     }
 }
 
