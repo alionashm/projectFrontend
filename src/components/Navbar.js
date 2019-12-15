@@ -43,16 +43,15 @@ class Navbar extends React.Component {
     } else {
       links = (
         <React.Fragment>
-          <div className="btn">
+          {/* <div className="btn">
             <Link to="/login">
               <i className="fa fa-sign-in"></i>
               Log In
             </Link>
-          </div>
-          <div className="btn">
-            <Link to="/register">
-              <i className="fa fa-user-plus"></i>
-              Register
+          </div> */}
+          <div className="btn btn-register">
+            <Link className="btn-register" to="/register">
+              Sign Up
             </Link>
           </div>
         </React.Fragment>
@@ -64,8 +63,9 @@ class Navbar extends React.Component {
             <a className="navbar-brand" href="/">
                 Project Task Tool
             </a>
+            {links}
         </div>
-          {links}
+          
       </nav>
             
           

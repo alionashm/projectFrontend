@@ -88,18 +88,11 @@ code {
   padding-bottom: 10px;
 }
 
-
-.btn-search{
-  border-radius: 5px;
-  border: none;
-  background-image:url(lupa.png);
-  background-color:#5d709a;
-  height: 22px;
-  width: 22px;
-  background-size: 22px 22px;
-  margin-left:2px
+.btn-register{
+  text-decoration: none;
+  color:#fff;
+  margin-top:0
 }
-
 
 .btn-view-update{
   background-color: #5d709a; 

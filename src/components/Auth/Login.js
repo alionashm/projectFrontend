@@ -32,7 +32,7 @@ class Login extends React.Component {
         <div className="container">
           <div className="row">
             <div className="col-md-8 m-auto">
-                <h4 className="display-4 text-center">Log In</h4>
+                <h4 className="display-4 text-center">Sign In</h4>
                 <form onSubmit={this.onSubmit}>
                   <div className="form-group form-login">
                       
@@ -60,7 +60,7 @@ class Login extends React.Component {
                       />
                   </div>
                   <div className="form-group">
-                    <button type="submit" className="btn btn-send">Login</button>
+                    <button type="submit" className="btn btn-send">Sign In</button>
                   </div>
                 </form>
             </div>
